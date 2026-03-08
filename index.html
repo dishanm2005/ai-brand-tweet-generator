@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Brand Tweet Generator</title>
+<style>
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+width:400px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,textarea{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+button{
+background:#4CAF50;
+color:white;
+padding:10px 20px;
+border:none;
+cursor:pointer;
+}
+
+.tweets{
+margin-top:20px;
+text-align:left;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>AI Brand Tweet Generator</h2>
+
+<input id="brand" placeholder="Brand Name">
+
+<input id="industry" placeholder="Industry">
+
+<input id="objective" placeholder="Campaign Objective">
+
+<textarea id="product" placeholder="Product Description"></textarea>
+
+<button onclick="generateTweets()">Generate Tweets</button>
+
+<div class="tweets" id="output"></div>
+
+</div>
+
+<script>
+
+function generateTweets(){
+
+let brand=document.getElementById("brand").value
+let objective=document.getElementById("objective").value
+
+let tweets=[
+brand+" is here to change the game. Stay tuned.",
+"Experience the future with "+brand+".",
+"Why settle for ordinary? Choose "+brand+".",
+brand+" makes every moment better.",
+"Your next favorite thing starts with "+brand+".",
+"Smarter. Faster. Better. That's "+brand+".",
+"Discover the power of "+brand+" today.",
+brand+" is built for people who dream big.",
+"Upgrade your lifestyle with "+brand+".",
+brand+" — innovation that inspires."
+]
+
+let output="<h3>Generated Tweets</h3>"
+
+for(let i=0;i<tweets.length;i++){
+output+= "<p>"+(i+1)+". "+tweets[i]+"</p>"
+}
+
+document.getElementById("output").innerHTML=output
+
+}
+
+</script>
+
+</body>
+</html>
